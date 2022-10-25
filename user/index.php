@@ -11,7 +11,7 @@ if (!isset($_SESSION['id'])) {
   include '../chunks/header.php';
   include '../db.php';
 
-  $query = "SELECT * FROM `broadcasts`";
+  $query = "SELECT * FROM `broadcasts` WHERE `status`=1";
   $relt = mysqli_query($con, $query);
   if (!$relt) {
     $err = true;

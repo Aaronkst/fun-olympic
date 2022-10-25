@@ -32,7 +32,7 @@ if (!isset($_SESSION['admin'])) {
         <div class="col-sm-3 p-4">
           <div class="bg-white rounded shadow p-2">
             <p class="h5">Users</p>
-            <p class="display-4 text-primary text-end">
+            <p class="h4 text-primary text-end">
               <?= $userData['count'] ?>
             </p>
           </div>
@@ -40,7 +40,7 @@ if (!isset($_SESSION['admin'])) {
         <div class="col-sm-3 p-4">
           <div class="bg-white rounded shadow p-2">
             <p class="h5">Broadcasts</p>
-            <p class="display-4 text-primary text-end">
+            <p class="h4 text-primary text-end">
               <?= $bcData['count'] ?>
             </p>
           </div>
@@ -49,13 +49,13 @@ if (!isset($_SESSION['admin'])) {
           <div class="bg-white rounded shadow d-flex p-2">
             <div style="flex:1;" class="d-flex flex-column mx-2">
               <p class="h5">Top Broadcast</p>
-              <p class="display-5 text-primary text-end mt-auto">
+              <p class="h5 text-primary text-end mt-auto">
                 <?= $topBcData['name'] ?>
               </p>
             </div>
             <div style="flex:1;" class="d-flex flex-column mx-2">
               <p class="h5">Views</p>
-              <p class="display-4 text-primary text-end mt-auto">
+              <p class="h4 text-primary text-end mt-auto">
                 <?= $topBcData['views'] ?>
               </p>
             </div>

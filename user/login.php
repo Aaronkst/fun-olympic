@@ -12,7 +12,7 @@ if (isset($_SESSION['id'])) {
     include '../db.php';
     $email = mysqli_escape_string($con, $_POST['email']);
     $password = $_POST['password'];
-    $userQuery = "SELECT * FROM `users` WHERE email='$email'";
+    $userQuery = "SELECT * FROM `users` WHERE `email`='$email' AND `status`=1";
     $relt = mysqli_query($con, $userQuery);
     if (!$relt) {
       $err = true;
