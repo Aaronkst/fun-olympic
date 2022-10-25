@@ -7,19 +7,20 @@ include '../db.php';
 
 if (isset($_POST['save'])) {
   $name = mysqli_escape_string($con, $_POST['name']);
-  $img = mysqli_escape_string($con, $_POST['img']);
+  $username = mysqli_escape_string($con, $_POST['username']);
+  $password = mysqli_escape_string($con, $_POST['password']);
   if (isset($_GET['id'])) {
     $id = mysqli_escape_string($con, $_GET['id']);
-    $insertQuery = "UPDATE `broadcasts` SET `name`='$name',`img`='$img' WHERE id=$id";
+    $insertQuery = "UPDATE `athletes` SET `name`='$name',`username`='$username',`password`='$password' WHERE id=$id";
   } else {
-    $insertQuery = "INSERT INTO `broadcasts` (`name`,`img`) VALUES ('$name','$img')";
+    $insertQuery = "INSERT INTO `athletes` (`name`,`username`,`password`) VALUES ('$name','$username','$password')";
   }
   echo $insertQuery;
   $save = mysqli_query($con, $insertQuery);
   echo $save;
 
   if ($save) {
-    header("Location: broadcasts.php");
+    header("Location: athletes.php");
   } else {
     $err = true;
     $errMsg = mysqli_error($con);
@@ -28,11 +29,12 @@ if (isset($_POST['save'])) {
 
 if (isset($_GET['id'])) {
   $id = mysqli_escape_string($con, $_GET['id']);
-  $bcQuery = "SELECT * FROM `broadcasts` WHERE id=$id";
+  $bcQuery = "SELECT * FROM `athletes` WHERE id=$id";
   $relt = mysqli_query($con, $bcQuery);
   $data = $relt->fetch_assoc();
   $bc_name = $data['name'];
-  $bc_img = $data['img'];
+  $bc_username = $data['username'];
+  $bc_password = $data['password'];
 }
 
 include '../chunks/header.php';
@@ -65,8 +67,12 @@ include '../chunks/header.php';
           <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" <?php if (isset($data)) echo "value='$bc_name'"; ?> required>
         </div>
         <div class="form-group m-3">
-          <label for="img">Image</label>
-          <input type="text" class="form-control" id="img" name="img" placeholder="Image" <?php if (isset($data)) echo "value='$bc_img'"; ?> required>
+          <label for="username">Image</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username" <?php if (isset($data)) echo "value='$bc_username'"; ?> required>
+        </div>
+        <div class="form-group m-3">
+          <label for="password">Password</label>
+          <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Enter password" <?php if (isset($data)) echo "value='$bc_password'"; ?> required>
         </div>
         <div class="form-group m-3">
           <button type="submit" name="save" class="btn btn-primary d-block w-100" id="submitBtn">Save</button>

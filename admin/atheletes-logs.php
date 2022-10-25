@@ -14,7 +14,7 @@ if (!isset($_SESSION['admin']) && !isset($_GET['id'])) {
   if (isset($_GET['page'])) $start = $_GET['page'] * 10;
 
   $userQuery = "SELECT `name` FROM `users` WHERE id=$id";
-  $logQuery = "SELECT log.*, broadcasts.name FROM `log`, `broadcasts` WHERE log.user=$id AND broadcasts.id = log.broadcast AND log.type='user' LIMIT $start, 9";
+  $logQuery = "SELECT log.*, broadcasts.name FROM `log`, `broadcasts` WHERE log.user=$id AND broadcasts.id = log.broadcast AND log.type='athlete' LIMIT $start, 9";
 
   $relt = mysqli_query($con, $logQuery);
   $count = mysqli_num_rows($relt);

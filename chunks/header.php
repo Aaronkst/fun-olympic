@@ -44,6 +44,7 @@ function generateAdminNav()
         <a href="index.php" class="btn btn-primary">Home</a>
         <a href="users.php" class="btn btn-primary">Users</a>
         <a href="broadcasts.php" class="btn btn-primary">Broadcasts</a>
+        <a href="athletes.php" class="btn btn-primary">Athletes</a>
         <a href="logout.php" class="btn btn-danger">Logout</a>
       </div>
     </div>

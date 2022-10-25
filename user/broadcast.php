@@ -15,7 +15,7 @@ if (!isset($_SESSION['id']) || !isset($_GET['id'])) {
   $user = mysqli_escape_string($con, $_SESSION['id']);
   $timestamp = date('Y-m-d H:i:s');
 
-  $logQuery = "INSERT INTO `log` (`user`, `broadcast`, `time`) VALUES ($user, $id, '$timestamp')";
+  $logQuery = "INSERT INTO `log` (`user`, `broadcast`, `time`, `type`) VALUES ($user, $id, '$timestamp', 'user')";
   $create = mysqli_query($con, $logQuery);
   if (!$create) echo mysqli_error($con);
 
