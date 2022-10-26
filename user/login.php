@@ -41,6 +41,12 @@ if (isset($_SESSION['id'])) {
 
   <?php generateHeaders("Login"); ?>
 
+  <style>
+    body {
+      background-image: url("../assets/img/bg.jpg");
+    }
+  </style>
+
   <body class="container-fluid">
     <p class="display-4 text-center m-5">FunOlympic Games</p>
     <section class="row">
