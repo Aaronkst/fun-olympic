@@ -42,10 +42,11 @@ if (!isset($_SESSION['id']) || !isset($_GET['id'])) {
   <body class="container-fluid">
     <?php generateNav(); ?>
     <section class="row">
-      <div class="col-10 p-0">
-        <img src="../assets/img/<?= $data['img'] ?>" class="block w-100 mb-3" />
+      <div class="col p-0">
+        <!-- <img src="../assets/img/<?= $data['img'] ?>" class="block w-100 mb-3" /> -->
+        <iframe width="1250" height="703" src="https://www.youtube.com/embed/WKELX_xqgZY" title="Men's basketball - Semi-final & final highlights! | Tokyo Replays" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="col-2 p-0">
+      <div class="col p-0">
         <p class="h5 text-white bg-dark p-4"><?= $data['name'] ?></p>
         <div class="p-4">
           <p>Athletes</p>
