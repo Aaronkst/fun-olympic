@@ -28,30 +28,30 @@ if (!isset($_SESSION['athlete'])) {
 
   <?php generateHeaders("Venue Check In"); ?>
 
-  <body class="container-fluid">
-    <?php generateNav(); ?>
-    <section class="row">
-      <div class="col-sm-4 offset-sm-4 p-3">
-        <form method="POST">
-          <div class="form-group mx-3 mb-1">
-            <?php if (isset($success) && $success) {
-            ?>
-              <div class="alert alert-success alert-dismissible p-2" role="alert">
-                Successfully Checked In!
-              </div>
-            <?php
-            }
-            ?>
-          </div>
-          <div class="form-group m-3">
-            <label for="venue">Venue</label>
-            <input type="text" class="form-control" id="venue" name="venue" placeholder="Enter Venue" required>
-          </div>
-          <div class="form-group m-3">
-            <button type="submit" name="checkIn" class="btn btn-primary d-block w-100">Check In</button>
-          </div>
-        </form>
-      </div>
+  <body class="d-flex flex-column bg-secondary align-items-center" style="width: 100vw; height:100vh;">
+    <div class="container-fluid">
+      <?php generateNav() ?>
+    </div>
+    <section class="col-sm-4 p-3 bg-white rounded shadow my-auto">
+      <form method="POST">
+        <div class="form-group mx-3 mb-1">
+          <?php if (isset($success) && $success) {
+          ?>
+            <div class="alert alert-success alert-dismissible p-2" role="alert">
+              Successfully Checked In!
+            </div>
+          <?php
+          }
+          ?>
+        </div>
+        <div class="form-group m-3">
+          <label for="venue" class="d-block text-center mb-2"><b>Venue</b></label>
+          <input type="text" class="form-control rounded-pill text-center" id="venue" name="venue" placeholder="Enter Venue" required>
+        </div>
+        <div class="form-group m-3 text-end">
+          <button type="submit" name="checkIn" class="btn btn-dark w-25 rounded-pill">Check In</button>
+        </div>
+      </form>
     </section>
   </body>
 

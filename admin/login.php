@@ -41,38 +41,6 @@ if (isset($_SESSION['admin'])) {
 
   <?php generateHeaders("Admin"); ?>
 
-  <!-- <body class="container-fluid">
-    <p class="display-4 text-center m-5">FunOlympic Games</p>
-    <section class="row">
-      <div class="col-sm-4 offset-sm-4 bg-white">
-        <form method="POST" class="p-3">
-          <div class="form-group mx-3 mb-1">
-            <?php if ($err) {
-            ?>
-              <div class="alert alert-danger alert-dismissible p-2" role="alert">
-                <?= $errMsg ?>
-              </div>
-            <?php
-            }
-            ?>
-          </div>
-          <div class="form-group m-3">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required>
-          </div>
-          <div class="form-group m-3">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
-          </div>
-          <div class="form-group m-3">
-            <button type="submit" name="login" value="login" class="btn btn-dark d-block w-100">Login</button>
-          </div>
-          <a href="register.php" class="d-block text-decoration-none text-center"><small>Register</small></a>
-        </form>
-      </div>
-    </section>
-  </body> -->
-
   <body class="d-flex flex-column bg-dark align-items-center justify-content-center" style="width: 100vw; height:100vh;">
     <p class="display-5 text-white text-center mb-5">Login</p>
     <section class="col-sm-4 bg-white rounded">
