@@ -58,12 +58,12 @@ if (!isset($_SESSION['admin'])) {
 
   <?php generateHeaders("Users"); ?>
 
-  <body class="container-fluid">
+  <body class="container-fluid bg-secondary">
     <?php generateAdminNav(); ?>
     <div class="container">
       <section class="row">
-        <form method="POST" class="col-12">
-          <div class="row">
+        <form method="POST" class="col-12 p-4  bg-white rounded shadow mt-4">
+          <div class="row mt-4">
             <div class="col">
               <div class="form-group m-3">
                 <label for="id">User Id</label>
@@ -86,7 +86,7 @@ if (!isset($_SESSION['admin'])) {
           <div class="row">
             <div class="col">
               <div class="text-end px-3">
-                <button class="btn btn-primary mx-3" type="submit" name="search">Search</button>
+                <button class="btn btn-dark mx-3" type="submit" name="search">Search</button>
                 <button class="btn btn-secondary" type="reset" id="reset">Reset</button>
               </div>
             </div>
@@ -94,9 +94,9 @@ if (!isset($_SESSION['admin'])) {
         </form>
       </section>
       <section class="row">
-        <div class="col-12 p-4">
+        <div class="col-12 p-4 rounded bg-white shadow mt-4">
           <p class="text-end">Total: <?= $count ?></p>
-          <div class="rounded bg-white shadow mt-4">
+          <div>
             <table class="table table-striped table-hover">
               <thead class="bg-dark text-white sticky-top">
                 <tr>
@@ -119,14 +119,14 @@ if (!isset($_SESSION['admin'])) {
                     <td><?= $data['name'] ?></td>
                     <td><?= $data['email'] ?></td>
                     <td>
+                      <a target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" href="usersLogs.php?id=<?= $data['id'] ?>">View Activity</a>
                       <form method="POST" class="d-inline mr-3">
                         <input type="text" name="id" value="<?= $data['id'] ?>" hidden>
                         <input type="text" name="status" value="<?= $data['status'] ?>" hidden>
-                        <button type="submit" name="update" class="btn btn-<?php echo $data['status'] == 1 ? "danger" : "primary"; ?> btn-sm">
-                          <?php echo $data['status'] == 1 ? "Disable" : "Enable"; ?>
+                        <button type="submit" name="update" class="btn btn-<?php echo $data['status'] == 1 ? "outline-danger" : "success"; ?> btn-sm">
+                          <?php echo $data['status'] == 1 ? "Delete" : "Restore"; ?>
                         </button>
                       </form>
-                      <a target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-sm" href="users-logs.php?id=<?= $data['id'] ?>">View Activity</a>
                     </td>
                   </tr>
                 <?php
@@ -139,7 +139,7 @@ if (!isset($_SESSION['admin'])) {
                 <?php
                 for ($x = 0; $x < $count / 10; $x++) {
                 ?>
-                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="users.php?page=' . $x + 1 . '"'; ?>><?= $x + 1 ?></a>
+                  <a class="btn rounded-circle btn-dark px-3" <?php if ($x * 10 !== $start) echo 'href="users.php?page=' . $x + 1 . '"'; ?>><small><?= $x + 1 ?></small></a>
                 <?php
                 }
                 ?>

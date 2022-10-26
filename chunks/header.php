@@ -21,12 +21,12 @@ function generateHeaders($name)
 function generateNav()
 {
   echo '
-  <nav class="row bg-primary text-white">
+  <nav class="row bg-dark text-white">
     <div class="d-flex align-items-center py-4">
       <p class="mb-0 h5" style="flex:1;">FunOlympic</p>
       <div>
-        <a href="index.php" class="btn btn-primary">Home</a>
-        <a href="logout.php" class="btn btn-danger">Logout</a>
+        <a href="index.php" class="btn btn-dark">Home</a>
+        <a href="logout.php" class="btn btn-outline-danger">Logout</a>
       </div>
     </div>
   </nav>';
@@ -37,15 +37,15 @@ function generateNav()
 function generateAdminNav()
 {
   echo '
-  <nav class="row bg-primary text-white">
+  <nav class="row bg-dark text-white">
     <div class="d-flex align-items-center py-4">
       <p class="mb-0 h5" style="flex:1;">FunOlympic</p>
       <div>
-        <a href="index.php" class="btn btn-primary">Home</a>
-        <a href="users.php" class="btn btn-primary">Users</a>
-        <a href="broadcasts.php" class="btn btn-primary">Broadcasts</a>
-        <a href="athletes.php" class="btn btn-primary">Athletes</a>
-        <a href="logout.php" class="btn btn-danger">Logout</a>
+        <a href="index.php" class="btn btn-dark">Home</a>
+        <a href="users.php" class="btn btn-dark">Users</a>
+        <a href="broadcasts.php" class="btn btn-dark">Broadcasts</a>
+        <a href="athletes.php" class="btn btn-dark">Athletes</a>
+        <a href="logout.php" class="btn btn-outline-danger">Logout</a>
       </div>
     </div>
   </nav>';

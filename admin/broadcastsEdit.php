@@ -69,7 +69,7 @@ include '../chunks/header.php';
           <input type="text" class="form-control" id="img" name="img" placeholder="Image" <?php if (isset($data)) echo "value='$bc_img'"; ?> required>
         </div>
         <div class="form-group m-3">
-          <button type="submit" name="save" class="btn btn-primary d-block w-100" id="submitBtn">Save</button>
+          <button type="submit" name="save" class="btn btn-dark d-block w-100" id="submitBtn">Save</button>
         </div>
         <div class="form-group m-3">
           <button type="reset" class="btn btn-secondary d-block w-100" id="cancel">Cancel</button>

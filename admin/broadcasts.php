@@ -49,16 +49,14 @@ if (!isset($_SESSION['admin'])) {
 
   <?php generateHeaders("Broadcasts"); ?>
 
-  <body class="container-fluid">
+  <body class="container-fluid bg-secondary">
     <?php generateAdminNav(); ?>
     <div class="container">
       <section class="row">
-        <div class="col-12">
-          <div class="text-end p-3">
-            <a href="broadcasts-edit.php" class="btn btn-success">Create New &plus;</a>
+        <form method="POST" class="col-12 p-4  bg-white rounded shadow mt-4">
+          <div class="text-end px-3">
+            <a href="broadcastsEdit.php" class="btn btn-success">Create New &plus;</a>
           </div>
-        </div>
-        <form method="POST" class="col-12">
           <div class="row">
             <div class="col">
               <div class="form-group m-3">
@@ -76,7 +74,7 @@ if (!isset($_SESSION['admin'])) {
           <div class="row">
             <div class="col">
               <div class="text-end px-3">
-                <button class="btn btn-primary mx-3" type="submit" name="search">Search</button>
+                <button class="btn btn-dark mx-3" type="submit" name="search">Search</button>
                 <button class="btn btn-secondary" type="reset" id="reset">Reset</button>
               </div>
             </div>
@@ -84,9 +82,9 @@ if (!isset($_SESSION['admin'])) {
         </form>
       </section>
       <section class="row">
-        <div class="col-12 p-4">
+        <div class="col-12 p-4 rounded bg-white shadow mt-4">
           <p class="text-end">Total: <?= $count ?></p>
-          <div class="rounded bg-white shadow mt-4">
+          <div>
             <table class="table table-striped table-hover">
               <thead class="bg-dark text-white sticky-top">
                 <tr>
@@ -109,14 +107,14 @@ if (!isset($_SESSION['admin'])) {
                     <td><?= $data['name'] ?></td>
                     <td><?= $data['img'] ?></td>
                     <td>
+                      <a class="btn btn-warning btn-sm" href="broadcastsEdit.php?id=<?= $data['id'] ?>">Edit</a>
                       <form method="POST" class="d-inline mr-3">
                         <input type="text" name="id" value="<?= $data['id'] ?>" hidden>
                         <input type="text" name="status" value="<?= $data['status'] ?>" hidden>
-                        <button type="submit" name="update" class="btn btn-<?php echo $data['status'] == 1 ? "danger" : "primary"; ?> btn-sm">
-                          <?php echo $data['status'] == 1 ? "Disable" : "Enable"; ?>
+                        <button type="submit" name="update" class="btn btn-<?php echo $data['status'] == 1 ? "outline-danger" : "success"; ?> btn-sm">
+                          <?php echo $data['status'] == 1 ? "Delete" : "Restore"; ?>
                         </button>
                       </form>
-                      <a class="btn btn-warning btn-sm" href="broadcasts-edit.php?id=<?= $data['id'] ?>">Edit</a>
                     </td>
                   </tr>
                 <?php
@@ -129,7 +127,7 @@ if (!isset($_SESSION['admin'])) {
                 <?php
                 for ($x = 0; $x < $count / 10; $x++) {
                 ?>
-                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="users.php?page=' . $x + 1 . '"'; ?>><?= $x + 1 ?></a>
+                  <a class="btn rounded-circle btn-dark px-3" <?php if ($x * 10 !== $start) echo 'href="broadcasts.php?page=' . $x + 1 . '"'; ?>><small><?= $x + 1 ?></small></a>
                 <?php
                 }
                 ?>

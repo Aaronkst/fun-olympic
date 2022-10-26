@@ -75,7 +75,7 @@ include '../chunks/header.php';
           <input type="password" class="form-control mb-3" id="password" name="password" placeholder="Enter password" <?php if (isset($data)) echo "value='$bc_password'"; ?> required>
         </div>
         <div class="form-group m-3">
-          <button type="submit" name="save" class="btn btn-primary d-block w-100" id="submitBtn">Save</button>
+          <button type="submit" name="save" class="btn btn-dark d-block w-100" id="submitBtn">Save</button>
         </div>
         <div class="form-group m-3">
           <button type="reset" class="btn btn-secondary d-block w-100" id="cancel">Cancel</button>

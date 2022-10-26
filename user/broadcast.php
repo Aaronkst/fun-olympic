@@ -42,10 +42,20 @@ if (!isset($_SESSION['id']) || !isset($_GET['id'])) {
   <body class="container-fluid">
     <?php generateNav(); ?>
     <section class="row">
-      <div class="col-sm-12 py-3">
-        <div class="col-8 offset-2">
-          <img src="../assets/img/<?= $data['img'] ?>" class="block w-100 mb-3" />
-          <p class="h3"><?= $data['name'] ?></p>
+      <div class="col-10 p-0">
+        <img src="../assets/img/<?= $data['img'] ?>" class="block w-100 mb-3" />
+      </div>
+      <div class="col-2 p-0">
+        <p class="h5 text-white bg-dark p-4"><?= $data['name'] ?></p>
+        <div class="p-4">
+          <p>Athletes</p>
+          <ul>
+            <li>Athlete 1</li>
+            <li>Athlete 2</li>
+            <li>Athlete 3</li>
+            <li>Athlete 4</li>
+            <li>Athlete 5</li>
+          </ul>
         </div>
       </div>
     </section>

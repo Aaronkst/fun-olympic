@@ -25,44 +25,44 @@ if (!isset($_SESSION['admin'])) {
 
   <?php generateHeaders("Dashboard"); ?>
 
-  <body class="container-fluid">
+  <body class="container-fluid bg-secondary">
     <?php generateAdminNav(); ?>
     <div class="container">
       <section class="row">
         <div class="col-sm-3 p-4">
-          <div class="bg-white rounded shadow p-2">
+          <div class="bg-white rounded shadow py-4 px-3">
             <p class="h5">Users</p>
-            <p class="h4 text-primary text-end">
+            <p class="h4 text-success">
               <?= $userData['count'] ?>
             </p>
           </div>
         </div>
         <div class="col-sm-3 p-4">
-          <div class="bg-white rounded shadow p-2">
+          <div class="bg-white rounded shadow py-4 px-3">
             <p class="h5">Broadcasts</p>
-            <p class="h4 text-primary text-end">
+            <p class="h4 text-success">
               <?= $bcData['count'] ?>
             </p>
           </div>
         </div>
         <div class="col-sm-6 p-4">
-          <div class="bg-white rounded shadow d-flex p-2">
+          <div class="bg-white rounded shadow d-flex py-4 px-3">
             <div style="flex:1;" class="d-flex flex-column mx-2">
               <p class="h5">Top Broadcast</p>
-              <p class="h5 text-primary text-end mt-auto">
+              <p class="h5 text-success mt-auto">
                 <?= $topBcData['name'] ?>
               </p>
             </div>
             <div style="flex:1;" class="d-flex flex-column mx-2">
               <p class="h5">Views</p>
-              <p class="h4 text-primary text-end mt-auto">
+              <p class="h4 text-success mt-auto">
                 <?= $topBcData['views'] ?>
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section class="row">
+      <!-- <section class="row">
         <div class="col-12 p-4">
           <a href="broadcasts.php" class="block h3">Broadcasts &rarr;</a>
           <div class="rounded bg-white shadow mt-4">
@@ -88,7 +88,7 @@ if (!isset($_SESSION['admin'])) {
             </table>
           </div>
         </div>
-      </section>
+      </section> -->
     </div>
 
   </body>
