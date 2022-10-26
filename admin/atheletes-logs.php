@@ -67,7 +67,7 @@ if (!isset($_SESSION['admin']) && !isset($_GET['id'])) {
                 <?php
                 for ($x = 0; $x < $count / 10; $x++) {
                 ?>
-                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="users.php?page=' . $x + 1 . '"'; ?>><?= $x + 1 ?></a>
+                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="atheletes-logs.php?page=' . $x + 1 . '&id=' . $_GET['id'] . '"'; ?>><?= $x + 1 ?></a>
                 <?php
                 }
                 ?>

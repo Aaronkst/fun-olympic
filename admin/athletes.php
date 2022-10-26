@@ -131,7 +131,7 @@ if (!isset($_SESSION['admin'])) {
                           <?php echo $data['status'] == 1 ? "Disable" : "Enable"; ?>
                         </button>
                       </form>
-                      <a target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-sm" href="users-logs.php?id=<?= $data['id'] ?>">View Activity</a>
+                      <a target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-sm" href="atheletes-logs.php?id=<?= $data['id'] ?>">View Activity</a>
                     </td>
                   </tr>
                 <?php
@@ -144,7 +144,7 @@ if (!isset($_SESSION['admin'])) {
                 <?php
                 for ($x = 0; $x < $count / 10; $x++) {
                 ?>
-                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="users.php?page=' . $x + 1 . '"'; ?>><?= $x + 1 ?></a>
+                  <a class="btn rounded-circle btn-primary" <?php if ($x * 10 !== $start) echo 'href="athletes.php?page=' . $x + 1 . '"'; ?>><?= $x + 1 ?></a>
                 <?php
                 }
                 ?>
