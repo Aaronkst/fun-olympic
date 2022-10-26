@@ -44,7 +44,10 @@ if (!isset($_SESSION['id']) || !isset($_GET['id'])) {
     <section class="row">
       <div class="col-sm-12 py-3">
         <div class="col-8 offset-2">
-          <img src="../assets/img/<?= $data['img'] ?>" class="block w-100 mb-3" />
+          <!-- <video class="block w-100 mb-3">
+            <source src="https://youtu.be/FNt2LSLGV6w">
+          </video> -->
+          <iframe width="1250" height="703" src="https://www.youtube.com/embed/FNt2LSLGV6w" title="Brazil ● Road to the World Cup 2022" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <p class="h3"><?= $data['name'] ?></p>
         </div>
       </div>
