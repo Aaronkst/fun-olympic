@@ -129,7 +129,7 @@ if (!isset($_SESSION['admin'])) {
                           <?php echo $data['status'] == 1 ? "Disable" : "Enable"; ?>
                         </button>
                       </form>
-                      <a target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-sm" href="athleteLogs.php?id=<?= $data['id'] ?>">View Activity</a>
+                      <a target="_blank" rel="noopener noreferrer" class="btn btn-warning btn-sm" href="athletesLogs.php?id=<?= $data['id'] ?>">View Activity</a>
                     </td>
                   </tr>
                 <?php
