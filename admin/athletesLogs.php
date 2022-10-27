@@ -13,8 +13,8 @@ if (!isset($_SESSION['admin']) && !isset($_GET['id'])) {
 
   if (isset($_GET['page'])) $start = $_GET['page'] * 10;
 
-  $userQuery = "SELECT `name` FROM `users` WHERE id=$id";
-  $logQuery = "SELECT log.*, broadcasts.name FROM `log`, `broadcasts` WHERE log.user=$id AND broadcasts.id = log.broadcast AND log.type='athlete' LIMIT $start, 9";
+  $userQuery = "SELECT `name` FROM `athletes` WHERE id=$id";
+  $logQuery = "SELECT log.* FROM `log` WHERE log.user=$id AND log.type='athlete' LIMIT $start, 9";
 
   $relt = mysqli_query($con, $logQuery);
   $count = mysqli_num_rows($relt);
@@ -38,8 +38,7 @@ if (!isset($_SESSION['admin']) && !isset($_GET['id'])) {
               <thead class="bg-dark text-white sticky-top">
                 <tr>
                   <th>#</th>
-                  <th>Broadcast Id</th>
-                  <th>Broadcast Name</th>
+                  <th>Venue</th>
                   <th>Time</th>
                 </tr>
               </thead>
@@ -52,8 +51,7 @@ if (!isset($_SESSION['admin']) && !isset($_GET['id'])) {
                 ?>
                     <tr>
                       <td><?= $i ?></td>
-                      <td><?= $data['broadcast'] ?></td>
-                      <td><?= $data['name'] ?></td>
+                      <td><?= $data['venue'] ?></td>
                       <td><?= $data['time'] ?></td>
                     </tr>
                 <?php
