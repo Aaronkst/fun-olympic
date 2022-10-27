@@ -6,7 +6,7 @@ $err = false;
 $errMsg = "";
 
 if (!isset($_SESSION['athlete'])) {
-  header("Location: index.php");
+  header("Location: login.php");
 } else {
   include '../chunks/header.php';
   include '../db.php';
